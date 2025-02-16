@@ -40,16 +40,17 @@ The Home Rentals Application provides the following capabilities:
 
 ---
 
-Usage
+Usage:
+
 Sign Up / Log In: Create an account or log in to access personalized features such as creating listings, booking, and managing a wishlist.
+
 Create Listing: Provide property details, upload images, and specify amenities.
+
 Browse & Search: Filter listings by category, keyword, or price range.
+
 Book: Select available dates from the calendar to reserve a property.
+
 Wishlist: Add or remove properties from your wishlist for quick reference.
 
-
-License
-Distributed under the MIT License. See LICENSE for more details.
-
-Contact
+Contact:
 Utsav Choudhary (+91 88268 34155)
