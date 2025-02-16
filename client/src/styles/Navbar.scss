@@ -1,0 +1,147 @@
+@import "./variables.scss";
+@import "./breakpoints.scss";
+
+.navbar {
+  padding: 15px 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: linear-gradient(to right, #080202 50%, #d3d3d3);
+  border-bottom: 2px solid $grey;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  @include sm {
+    padding: 15px 20px;
+  }
+
+  img {
+    width: 110px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &_search {
+    border: 1px solid $grey;
+    border-radius: 30px;
+    height: 50px;
+    padding: 0px 20px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: #ffffff;
+    transition: box-shadow 0.3s ease;
+
+    input {
+      border: none;
+      outline: none;
+      font-size: 16px;
+      color: $blue;
+
+      &::placeholder {
+        color: $grey;
+        font-style: italic;
+      }
+    }
+
+    &:hover {
+      @include shadow;
+      transform: translateY(-3px);
+    }
+
+    @include lg {
+      display: none;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    .host {
+      text-decoration: none;
+      color: $blue;
+      font-weight: 700;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $pinkred;
+        text-decoration: underline;
+      }
+
+      @include sm {
+        display: none;
+      }
+    }
+
+    &_account {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0 15px;
+      border: 1px solid $grey;
+      border-radius: 30px;
+      gap: 12px;
+      background-color: #fff;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:hover {
+        @include shadow;
+        transform: translateY(-3px);
+      }
+
+      img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid $pinkred;
+      }
+    }
+
+    &_accountmenu {
+      position: absolute;
+      background-color: #ffffff;
+      right: 60px;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      width: 220px;
+      padding: 12px 0;
+      border: 1px solid $lightgrey;
+      border-radius: 20px;
+      @include shadow;
+      z-index: 9999;
+      animation: fadeIn 0.3s ease;
+
+      @include sm {
+        right: 20px;
+      }
+
+      a {
+        width: 100%;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $blue;
+        font-weight: 700;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          color: $pinkred;
+          background-color: rgba(217, 213, 213, 0.3);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
