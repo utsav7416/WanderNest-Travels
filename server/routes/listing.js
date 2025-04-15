@@ -15,7 +15,6 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-/* CREATE LISTING */
 router.post("/create", upload.array("listingPhotos"), async (req, res) => {
   try {
     const {
@@ -70,7 +69,6 @@ router.post("/create", upload.array("listingPhotos"), async (req, res) => {
   }
 });
 
-/* GET LISTINGS BY CATEGORY */
 router.get("/", async (req, res) => {
   const qCategory = req.query.category
 
@@ -89,7 +87,6 @@ router.get("/", async (req, res) => {
   }
 })
 
-/* GET LISTINGS BY SEARCH */
 router.get("/search/:search", async (req, res) => {
   const { search } = req.params
 
@@ -108,13 +105,13 @@ router.get("/search/:search", async (req, res) => {
     }
 
     res.status(200).json(listings)
-  } catch (err) {
+  } 
+  catch (err) {
     res.status(404).json({ message: "Fail to fetch listings", error: err.message })
     console.log(err)
   }
 })
 
-/* LISTING DETAILS */
 router.get("/:listingId", async (req, res) => {
   try {
     const { listingId } = req.params
