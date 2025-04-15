@@ -19,6 +19,7 @@ app.use("/bookings", bookingRoutes)
 app.use("/users", userRoutes)
 
 const PORT = 3001
+
 mongoose.connect(process.env.MONGO_URL, {
     dbName: "WanderNest",
     useNewUrlParser: true,
