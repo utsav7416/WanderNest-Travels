@@ -4,7 +4,6 @@ const Booking = require("../models/Booking")
 const User = require("../models/User")
 const Listing = require("../models/Listing")
 
-/* GET TRIP LIST */
 router.get("/:userId/trips", async (req, res) => {
   try {
     const { userId } = req.params
@@ -16,7 +15,6 @@ router.get("/:userId/trips", async (req, res) => {
   }
 })
 
-/* ADD LISTING TO WISHLIST */
 router.patch("/:userId/:listingId", async (req, res) => {
   try {
     const { userId, listingId } = req.params
@@ -25,13 +23,11 @@ router.patch("/:userId/:listingId", async (req, res) => {
 
     const favoriteListing = user.wishList.find((item) => item._id.toString() === listingId)
 
-    // If the listing is already in the wish list, remove it.
     if (favoriteListing) {
       user.wishList = user.wishList.filter((item) => item._id.toString() !== listingId)
       await user.save()
       res.status(200).json({ message: "Listing is removed from wish list", wishList: user.wishList})
     } 
-    // If the listing is not in the wish list, add it.
     else {
       user.wishList.push(listing)
       await user.save()
@@ -43,7 +39,6 @@ router.patch("/:userId/:listingId", async (req, res) => {
   }
 })
 
-/* GET PROPERTY LIST */
 router.get("/:userId/properties", async (req, res) => {
   try {
     const { userId } = req.params
