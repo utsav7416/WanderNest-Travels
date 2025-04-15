@@ -14,6 +14,7 @@ router.post("/create", async(req,res) => {
 
         res.status(200).json(newBooking)
     } 
+    
     catch (err) {
         console.log(err)
         res.status(400).json({ message: "Failed to create a new Booking!", error: err.message })
