@@ -9,6 +9,7 @@ import ListingCard from "../components/ListingCard";
 import Footer from "../components/Footer"
 
 const CategoryPage = () => {
+
   const [loading, setLoading] = useState(true);
   const { category } = useParams()
 
@@ -16,6 +17,7 @@ const CategoryPage = () => {
   const listings = useSelector((state) => state.listings);
 
   const getFeedListings = async () => {
+
     try {
       const response = await fetch(
           `http://localhost:3001/properties?category=${category}`,
