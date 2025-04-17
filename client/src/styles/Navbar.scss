@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background: linear-gradient(to right, #080202 50%, #d3d3d3);
+  background: linear-gradient(135deg, #000000, #2c003f);
   border-bottom: 2px solid $grey;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 
@@ -29,12 +29,12 @@
     border: 1px solid $grey;
     border-radius: 30px;
     height: 50px;
-    padding: 0px 20px;
+    padding: 0 20px;
     display: flex;
     gap: 30px;
     align-items: center;
-    background-color: #ffffff;
-    transition: box-shadow 0.3s ease;
+    background: linear-gradient(135deg, #ffffffee, #ffffffdd);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 
     input {
       border: none;
@@ -43,14 +43,14 @@
       color: $blue;
 
       &::placeholder {
-        color: $grey;
+        color: palevioletred;
         font-style: italic;
       }
     }
 
     &:hover {
       @include shadow;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     @include lg {
@@ -65,7 +65,7 @@
 
     .host {
       text-decoration: none;
-      color: $blue;
+      color: #fff;
       font-weight: 700;
       cursor: pointer;
       transition: color 0.3s ease;
@@ -90,11 +90,12 @@
       gap: 12px;
       background-color: #fff;
       cursor: pointer;
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 
       &:hover {
         @include shadow;
         transform: translateY(-3px);
+        background-color: #f8f8f8;
       }
 
       img {
@@ -107,7 +108,7 @@
 
     &_accountmenu {
       position: absolute;
-      background-color: #ffffff;
+      background: linear-gradient(135deg, #d0e7ff, #ad59ee);
       right: 60px;
       top: 80px;
       display: flex;
@@ -142,6 +143,12 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
