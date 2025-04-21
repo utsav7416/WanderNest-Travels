@@ -1,24 +1,80 @@
 @import "./breakpoints.scss";
 @import "./variables.scss";
 
+$title-bg: linear-gradient(135deg, #d4fc79, #96e6a1); 
+$list-bg: linear-gradient(135deg, #f9f3f3, #9f29db);
+
+$title-shadow: 0 12px 24px rgba(144, 238, 144, 0.25);
+$list-shadow: 0 6px 16px rgba(255, 182, 193, 0.2);
+$hover-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 
 .title-list {
-  margin: 40px 100px;
-  color: $blue;
+  margin: 50px 100px;
+  padding: 30px 50px;
+  color: #205c44;
+  background: $title-bg;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.7px;
+  box-shadow: $title-shadow;
+  backdrop-filter: blur(5px);
+  transition: all 0.4s ease;
+  animation: fadeInSlide 0.8s ease-out;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: $hover-shadow;
+  }
 
   @include sm {
-    margin: 40px 50px;
+    margin: 40px 25px;
+    font-size: 1.6rem;
+    padding: 25px;
   }
 }
 
 .list {
-  padding: 0 100px 120px;
+  padding: 50px 100px 120px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 35px;
+  background: $list-bg;
+  border-radius: 28px;
+  box-shadow: $list-shadow;
+  transition: all 0.35s ease;
+  animation: fadeInZoom 1s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #ffe9f4, #9f29db);
+    transform: scale(1.015);
+  }
 
   @include xl {
-    padding: 0 20px 120px;
+    padding: 40px 30px 100px;
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
