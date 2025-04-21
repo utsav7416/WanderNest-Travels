@@ -60,7 +60,6 @@ router.post("/register", upload.single("profileImage"), async (req, res) => {
   }
 });
 
-/* USER LOGIN*/
 router.post("/login", async (req, res) => {
 
   try {
