@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"
-import "../styles/Register.scss";
 
 const RegisterPage = () => {
+  
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -20,9 +20,6 @@ const RegisterPage = () => {
       [name]: name === "profileImage" ? files[0] : value,
     });
   };
-
-    // ... (copies) the existing form data into the new state object, 
-    // so that all current values are retained.
 
   const [passwordMatch, setPasswordMatch] = useState(true)
 
