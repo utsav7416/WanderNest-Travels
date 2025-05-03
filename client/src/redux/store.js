@@ -19,7 +19,6 @@ const persistConfig = {
   storage,
 };
 
-
 const persistedReducer = persistReducer(persistConfig, state);
 
 export const store = configureStore({
