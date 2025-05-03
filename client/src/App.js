@@ -19,6 +19,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+
           <Route path="/" element={<HomePage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/login" element={<LoginPage />} />
@@ -32,6 +33,7 @@ function App() {
           <Route path="/:userId/reservations" element={<ReservationList />} />
           <Route path="/about" element={<About />} />
           <Route path="/refund-policy" element={<RefundPolicy />} />
+          
         </Routes>
       </BrowserRouter>
     </div>
