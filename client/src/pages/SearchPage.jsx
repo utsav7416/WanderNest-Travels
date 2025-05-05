@@ -13,7 +13,6 @@ const SearchPage = () => {
   const { search } = useParams()
   const listings = useSelector((state) => state.listings)
 
-  const dispatch = useDispatch()
 
   const getSearchListings = async () => {
     try {
