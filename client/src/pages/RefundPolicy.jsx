@@ -20,7 +20,6 @@ const RefundPolicy = () => {
           <ul
             style={{
               textAlign: "left",
-              maxWidth: "800px",
               margin: "auto",
               lineHeight: "2",
               fontSize: "1.15rem",
