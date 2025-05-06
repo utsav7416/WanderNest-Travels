@@ -53,7 +53,8 @@ const ListingDetails = () => {
   const end = new Date(dateRange[0].endDate);
   const dayCount = Math.round((end - start) / (1000 * 60 * 60 * 24));
 
- 
+  const customerId = useSelector((state) => state?.user?._id);
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     try {
