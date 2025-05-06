@@ -20,6 +20,7 @@ const RefundPolicy = () => {
           <ul
             style={{
               textAlign: "left",
+              maxWidth: "800px",
               margin: "auto",
               lineHeight: "2",
               fontSize: "1.15rem",
@@ -30,7 +31,7 @@ const RefundPolicy = () => {
             <li>✘ No refunds for no-shows or late cancellations.</li>
           </ul>
 
-          <h2 style={{ marginTop: "40px" }}>Cancellation by WanderNest</h2>
+          <h2 style={{ marginTop: "40px" }}></h2>
           <p
             style={{
               maxWidth: "800px",
