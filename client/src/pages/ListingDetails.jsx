@@ -37,7 +37,6 @@ const ListingDetails = () => {
 
   console.log(listing);
 
-  /* BOOKING CALENDAR */
   const [dateRange, setDateRange] = useState([
     {
       startDate: new Date(),
@@ -52,12 +51,9 @@ const ListingDetails = () => {
 
   const start = new Date(dateRange[0].startDate);
   const end = new Date(dateRange[0].endDate);
-  // Calculate day difference (rounded)
   const dayCount = Math.round((end - start) / (1000 * 60 * 60 * 24));
 
-  /* SUBMIT BOOKING */
-  const customerId = useSelector((state) => state?.user?._id);
-  const navigate = useNavigate();
+ 
 
   const handleSubmit = async () => {
     try {
@@ -178,7 +174,7 @@ const ListingDetails = () => {
               <DateRange
                 ranges={dateRange}
                 onChange={handleSelect}
-                locale={enUS} // Pass the locale prop here
+                locale={enUS} 
               />
               {dayCount > 1 ? (
                 <h2>
