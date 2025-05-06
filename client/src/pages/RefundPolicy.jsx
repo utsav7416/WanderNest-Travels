@@ -31,7 +31,7 @@ const RefundPolicy = () => {
             <li>✘ No refunds for no-shows or late cancellations.</li>
           </ul>
 
-          <h2 style={{ marginTop: "40px" }}></h2>
+          <h2 style={{ marginTop: "40px" }}>Cancellation by Wandernest</h2>
           <p
             style={{
               maxWidth: "800px",
