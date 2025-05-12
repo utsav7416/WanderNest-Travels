@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/ListingCard.scss";
+
 import {
   ArrowForwardIos,
   ArrowBackIosNew,
@@ -31,6 +32,7 @@ const ListingCard = ({
         (prevIndex - 1 + listingPhotoPaths.length) % listingPhotoPaths.length
     );
   };
+
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % listingPhotoPaths.length);
   };
