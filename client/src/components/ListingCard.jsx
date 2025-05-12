@@ -31,7 +31,6 @@ const ListingCard = ({
         (prevIndex - 1 + listingPhotoPaths.length) % listingPhotoPaths.length
     );
   };
-
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % listingPhotoPaths.length);
   };
@@ -42,7 +41,7 @@ const ListingCard = ({
 
 
   const user = useSelector((state) => state.user);
-  
+
   const wishList = user?.wishList || [];
 
   const isLiked = wishList?.find((item) => item?._id === listingId);
