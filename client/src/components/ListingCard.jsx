@@ -37,6 +37,7 @@ const ListingCard = ({
   };
 
   const navigate = useNavigate();
+  
   const dispatch = useDispatch();
 
 
