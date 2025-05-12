@@ -37,11 +37,12 @@ const ListingCard = ({
   };
 
   const navigate = useNavigate();
-  
+
   const dispatch = useDispatch();
 
 
   const user = useSelector((state) => state.user);
+  
   const wishList = user?.wishList || [];
 
   const isLiked = wishList?.find((item) => item?._id === listingId);
