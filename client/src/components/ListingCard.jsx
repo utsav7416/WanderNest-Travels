@@ -23,7 +23,6 @@ const ListingCard = ({
   totalPrice,
   booking,
 }) => {
-  /* SLIDER FOR IMAGES */
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevSlide = () => {
@@ -40,17 +39,14 @@ const ListingCard = ({
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  /* ADD TO WISHLIST */
-  
+
   const user = useSelector((state) => state.user);
   const wishList = user?.wishList || [];
 
   const isLiked = wishList?.find((item) => item?._id === listingId);
 
-  // The PATCH method is used to partially update a resource
   const patchWishList = async () => {
 
-    // Creator cannot like his own property
     if (user?._id !== creator._id) {
     const response = await fetch(
       `http://localhost:3001/users/${user?._id}/${listingId}`,
