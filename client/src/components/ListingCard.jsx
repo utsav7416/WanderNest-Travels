@@ -8,7 +8,6 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setWishList } from "../redux/state";
-
 const ListingCard = ({
   listingId,
   creator,
