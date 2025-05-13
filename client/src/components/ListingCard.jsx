@@ -39,7 +39,6 @@ const ListingCard = ({
 
   const dispatch = useDispatch();
 
-
   const user = useSelector((state) => state.user);
 
   const wishList = user?.wishList || [];
