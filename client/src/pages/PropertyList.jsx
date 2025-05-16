@@ -63,7 +63,6 @@ const PropertyList = () => {
           )
         )}
       </div>
-
       <Footer />
     </>
   );
