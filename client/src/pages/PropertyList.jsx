@@ -12,10 +12,11 @@ const PropertyList = () => {
   const [loading, setLoading] = useState(true)
   const user = useSelector((state) => state.user)
   const propertyList = user?.propertyList;
-  
+
   console.log(user)
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  
   const getPropertyList = async () => {
     try {
       const response = await fetch(`http://localhost:3001/users/${user._id}/properties`, {
