@@ -8,10 +8,11 @@ import Loader from "../components/Loader";
 import Footer from "../components/Footer"
 
 const PropertyList = () => {
-  
+
   const [loading, setLoading] = useState(true)
   const user = useSelector((state) => state.user)
   const propertyList = user?.propertyList;
+  
   console.log(user)
 
   const dispatch = useDispatch()
