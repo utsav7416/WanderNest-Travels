@@ -3,16 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../components/Navbar";
 import ListingCard from "../components/ListingCard";
 import { useEffect, useState } from "react";
-import { setPropertyList } from "../redux/state";
 import Loader from "../components/Loader";
 import Footer from "../components/Footer"
+import { setPropertyList } from "../redux/state";
 
 const PropertyList = () => {
 
   const [loading, setLoading] = useState(true);
 
   const user = useSelector((state) => state.user);
-  
+
   const propertyList = user?.propertyList;
 
   console.log(user)
