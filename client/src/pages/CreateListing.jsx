@@ -447,6 +447,7 @@ const CreateListing = () => {
 
       <Footer />
     </>
+    
   );
 };
 
