@@ -443,11 +443,11 @@ const CreateListing = () => {
             CREATE YOUR LISTING
           </button>
         </form>
+        
       </div>
 
       <Footer />
     </>
-    
   );
 };
 
