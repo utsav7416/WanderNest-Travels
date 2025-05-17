@@ -63,7 +63,11 @@ const CreateListing = () => {
     setPhotos(items);
   };
 
-  
+  const handleRemovePhoto = (indexToRemove) => {
+    setPhotos((prevPhotos) =>
+      prevPhotos.filter((_, index) => index !== indexToRemove)
+    );
+  };
 
   const [formDescription, setFormDescription] = useState({
     description: "",
