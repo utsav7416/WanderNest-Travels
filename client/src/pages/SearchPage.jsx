@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import "../styles/List.scss"
 import { useSelector,useDispatch } from "react-redux";
 import { setListings } from "../redux/state";
@@ -35,7 +36,6 @@ const SearchPage = () => {
   return loading ? <Loader /> : (
     <>
       <Navbar />
-      <h1 className="title-list">{search}</h1>
       <div className="list">
         {listings?.map(
           ({
