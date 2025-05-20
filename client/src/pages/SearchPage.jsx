@@ -10,10 +10,7 @@ import Footer from "../components/Footer"
 
 const SearchPage = () => {
 
-  const [loading, setLoading] = useState(true)
-  const { search } = useParams()
-  const listings = useSelector((state) => state.listings)
-
+  
   const dispatch = useDispatch();
 
   const getSearchListings = async () => {
