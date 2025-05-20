@@ -42,6 +42,7 @@ const PropertyList = () => {
       <Navbar />
       <h1 className="title-list">Your Property List</h1>
       <div className="list">
+        
         {propertyList?.map(
           ({
             _id,
@@ -67,6 +68,7 @@ const PropertyList = () => {
             />
           )
         )}
+
       </div>
       <Footer />
     </>
