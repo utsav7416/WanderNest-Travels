@@ -26,15 +26,7 @@ const WishList = () => {
             booking = false,
           }) => (
             <ListingCard
-              listingId={_id}
-              creator={creator}
-              listingPhotoPaths={listingPhotoPaths}
-              city={city}
-              country={country}
-              category={category}
-              type={type}
-              price={price}
-              booking={booking}
+              
             />
           )
         )}
