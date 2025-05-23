@@ -5,7 +5,7 @@ import ListingCard from "../components/ListingCard";
 import Footer from "../components/Footer"
 
 const WishList = () => {
-  
+
   const wishList = useSelector((state) => state.user.wishList);
 
   return (
@@ -39,6 +39,7 @@ const WishList = () => {
           )
         )}
       </div>
+      
       <Footer />
     </>
   );
