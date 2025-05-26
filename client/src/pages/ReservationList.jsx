@@ -7,8 +7,8 @@ import { setReservationList } from "../redux/state";
 import ListingCard from "../components/ListingCard";
 import Footer from "../components/Footer"
 
-
 const ReservationList = () => {
+
   const [loading, setLoading] = useState(true);
   const userId = useSelector((state) => state.user._id);
   const reservationList = useSelector((state) => state.user.reservationList);
