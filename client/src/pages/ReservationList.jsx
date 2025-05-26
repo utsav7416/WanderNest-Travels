@@ -45,11 +45,7 @@ const ReservationList = () => {
       <div className="list">
         {reservationList?.map(({ listingId, hostId, startDate, endDate, totalPrice, booking=true }) => (
           <ListingCard
-            listingId={listingId._id}
-            creator={hostId._id}
-            listingPhotoPaths={listingId.listingPhotoPaths}
-            city={listingId.city}
-            country={listingId.country}
+            
             category={listingId.category}
             startDate={startDate}
             endDate={endDate}
