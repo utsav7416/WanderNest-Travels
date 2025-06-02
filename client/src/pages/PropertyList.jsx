@@ -21,9 +21,12 @@ const PropertyList = () => {
 
   const getPropertyList = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/users/${user._id}/properties`, {
-        method: "GET"
-      })
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/users/${user._id}/properties`,
+        {
+          method: "GET"
+        }
+      )
       const data = await response.json()
       console.log(data)
       dispatch(setPropertyList(data))
@@ -42,7 +45,7 @@ const PropertyList = () => {
       <Navbar />
       <h1 className="title-list">Your Property List</h1>
       <div className="list">
-        
+
         {propertyList?.map(
           ({
             _id,

@@ -60,7 +60,7 @@ const Navbar = () => {
             <Person sx={{ color: variables.darkgrey }} />
           ) : (
             <img
-              src={`http://localhost:3001/${user.profileImagePath.replace(
+              src={`${process.env.REACT_APP_API_URL}/${user.profileImagePath.replace(
                 "public",
                 ""
               )}`}
@@ -72,7 +72,7 @@ const Navbar = () => {
 
         {dropdownMenu && !user && (
           <div className="navbar_right_accountmenu">
-            
+
             <Link to="/login">Log In</Link>
             <Link to="/register">Sign Up</Link>
           </div>

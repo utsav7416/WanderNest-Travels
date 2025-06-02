@@ -8,7 +8,6 @@ import ListingCard from "../components/ListingCard";
 import Footer from "../components/Footer"
 
 const ReservationList = () => {
-
   const [loading, setLoading] = useState(true);
   const userId = useSelector((state) => state.user._id);
   const reservationList = useSelector((state) => state.user.reservationList);
@@ -18,7 +17,7 @@ const ReservationList = () => {
   const getReservationList = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/users/${userId}/reservations`,
+        `${process.env.REACT_APP_API_URL}/users/${userId}/reservations`,
         {
           method: "GET",
         }
@@ -43,7 +42,7 @@ const ReservationList = () => {
       <Navbar />
       <h1 className="title-list">Your Reservation List</h1>
       <div className="list">
-        {reservationList?.map(({ listingId, hostId, startDate, endDate, totalPrice, booking=true }) => (
+        {reservationList?.map(({ listingId, hostId, startDate, endDate, totalPrice, booking = true }) => (
           <ListingCard
             listingId={listingId._id}
             creator={hostId._id}

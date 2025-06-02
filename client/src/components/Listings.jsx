@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setListings } from "../redux/state";
 
 const Listings = () => {
-    
+
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
 
@@ -21,8 +21,8 @@ const Listings = () => {
     try {
       const response = await fetch(
         selectedCategory !== "All"
-          ? `http://localhost:3001/properties?category=${selectedCategory}`
-          : "http://localhost:3001/properties",
+          ? `${process.env.REACT_APP_API_URL}/properties?category=${selectedCategory}`
+          : `${process.env.REACT_APP_API_URL}/properties`,
         {
           method: "GET",
         }

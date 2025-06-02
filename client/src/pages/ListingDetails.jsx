@@ -6,7 +6,7 @@ import { facilities } from "../data";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
-import enUS from "date-fns/locale/en-US"; 
+import enUS from "date-fns/locale/en-US";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
@@ -20,7 +20,7 @@ const ListingDetails = () => {
   const getListingDetails = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/properties/${listingId}`,
+        `${process.env.REACT_APP_API_URL}/properties/${listingId}`,
         { method: "GET" }
       );
       const data = await response.json();
@@ -51,7 +51,8 @@ const ListingDetails = () => {
 
   const start = new Date(dateRange[0].startDate);
   const end = new Date(dateRange[0].endDate);
-  const dayCount = Math.round((end - start) / (1000 * 60 * 60 * 24));
+  const dayCount = Math.max(1, Math.round((end - start) / (1000 * 60 * 60 * 24)));
+
 
   const customerId = useSelector((state) => state?.user?._id);
   const navigate = useNavigate();
@@ -67,13 +68,17 @@ const ListingDetails = () => {
         totalPrice: listing.price * dayCount,
       };
 
-      const response = await fetch("http://localhost:3001/bookings/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(bookingForm),
-      });
+      const response = await fetch(
+        // Use environment variable here
+        `${process.env.REACT_APP_API_URL}/bookings/create`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(bookingForm),
+        }
+      );
 
       if (response.ok) {
         navigate(`/${customerId}/trips`);
@@ -99,7 +104,7 @@ const ListingDetails = () => {
           {listing.listingPhotoPaths?.map((item, index) => (
             <img
               key={index}
-              src={`http://localhost:3001/${item.replace("public", "")}`}
+              src={`${process.env.REACT_APP_API_URL}/${item.replace("public", "")}`}
               alt="listing photo"
             />
           ))}
@@ -121,11 +126,11 @@ const ListingDetails = () => {
               <img
                 src={
                   listing.creator.profileImagePath
-                    ? `http://localhost:3001/${listing.creator.profileImagePath.replace(
+                    ? `${process.env.REACT_APP_API_URL}/${listing.creator.profileImagePath.replace(
                         "public",
                         ""
                       )}`
-                    : "/path/to/default-image.jpg"
+                    : "/assets/default_profile_pic.jpg" 
                 }
                 alt="Host profile"
               />
@@ -175,7 +180,7 @@ const ListingDetails = () => {
               <DateRange
                 ranges={dateRange}
                 onChange={handleSelect}
-                locale={enUS} 
+                locale={enUS}
               />
               {dayCount > 1 ? (
                 <h2>

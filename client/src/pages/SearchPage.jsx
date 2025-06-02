@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import "../styles/List.scss"
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setListings } from "../redux/state";
 import { useEffect, useState } from "react";
 import Loader from "../components/Loader"
@@ -9,7 +9,6 @@ import ListingCard from "../components/ListingCard";
 import Footer from "../components/Footer"
 
 const SearchPage = () => {
-
   const [loading, setLoading] = useState(true)
   const { search } = useParams()
   const listings = useSelector((state) => state.listings)
@@ -18,9 +17,12 @@ const SearchPage = () => {
 
   const getSearchListings = async () => {
     try {
-      const response = await fetch(`http://localhost:3001/properties/search/${search}`, {
-        method: "GET"
-      })
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/properties/search/${search}`,
+        {
+          method: "GET"
+        }
+      )
 
       const data = await response.json()
       dispatch(setListings({ listings: data }))
@@ -33,7 +35,7 @@ const SearchPage = () => {
   useEffect(() => {
     getSearchListings()
   }, [search])
-  
+
   return loading ? <Loader /> : (
     <>
       <Navbar />

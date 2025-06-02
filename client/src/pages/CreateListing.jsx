@@ -111,7 +111,8 @@ const CreateListing = () => {
         listingForm.append("listingPhotos", photo);
       });
 
-      const response = await fetch("http://localhost:3001/properties/create", {
+      // Use environment variable here
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/properties/create`, {
         method: "POST",
         body: listingForm,
       });
@@ -400,6 +401,7 @@ const CreateListing = () => {
                         </label>
                       </>
                     )}
+                    {provided.placeholder} {/* Important for react-beautiful-dnd */}
                   </div>
                 )}
               </Droppable>
