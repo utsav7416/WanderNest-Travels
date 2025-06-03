@@ -76,8 +76,7 @@ const ListingCard = ({
           {listingPhotoPaths?.map((photo, index) => (
             <div key={index} className="slide">
               <img
-                // Use environment variable here
-                src={`${process.env.REACT_APP_API_URL}/${photo?.replace("public", "")}`}
+                src={photo} 
                 alt={`photo ${index + 1}`}
               />
               <div
