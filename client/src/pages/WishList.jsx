@@ -6,7 +6,6 @@ import Footer from "../components/Footer"
 
 const WishList = () => {
 
-  const wishList = useSelector((state) => state.user.wishList);
 
   return (
     <>
