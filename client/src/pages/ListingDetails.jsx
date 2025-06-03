@@ -16,7 +16,7 @@ const ListingDetails = () => {
   const [loading, setLoading] = useState(true);
   const { listingId } = useParams();
   const [listing, setListing] = useState(null);
-a
+
   const getListingDetails = async () => {
     try {
       const response = await fetch(
