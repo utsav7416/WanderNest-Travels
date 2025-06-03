@@ -76,7 +76,7 @@ const ListingCard = ({
           {listingPhotoPaths?.map((photo, index) => (
             <div key={index} className="slide">
               <img
-                src={photo} 
+                src={`${process.env.REACT_APP_API_URL}/${photo?.replace("public", "")}`}
                 alt={`photo ${index + 1}`}
               />
               <div
