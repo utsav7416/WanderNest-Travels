@@ -24,9 +24,7 @@ const SearchPage = () => {
         }
       )
 
-      const data = await response.json()
-      dispatch(setListings({ listings: data }))
-      setLoading(false)
+      
     } catch (err) {
       console.log("Fetch Search List failed!", err.message)
     }
