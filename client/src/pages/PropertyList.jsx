@@ -17,6 +17,7 @@ const PropertyList = () => {
 
   console.log(user)
 
+  const dispatch = useDispatch();
 
   const getPropertyList = async () => {
     try {
