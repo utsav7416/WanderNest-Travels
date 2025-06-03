@@ -24,7 +24,8 @@ const TripList = () => {
       );
 
       const data = await response.json();
-      
+      dispatch(setTripList(data));
+      setLoading(false);
     } catch (err) {
       console.log("Fetch Trip List failed!", err.message);
     }
