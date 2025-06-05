@@ -25,17 +25,8 @@ const ListingCard = ({
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToPrevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + listingPhotoPaths.length) % listingPhotoPaths.length
-    );
-  };
-  const goToNextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % listingPhotoPaths.length);
-  };
+  
 
-  const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
