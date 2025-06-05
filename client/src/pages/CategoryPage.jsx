@@ -13,7 +13,6 @@ const CategoryPage = () => {
   const [loading, setLoading] = useState(true);
   const { category } = useParams()
 
-  const dispatch = useDispatch()
   const listings = useSelector((state) => state.listings);
 
   const getFeedListings = async () => {
