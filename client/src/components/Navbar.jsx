@@ -55,7 +55,19 @@ const Navbar = () => {
           className="navbar_right_account"
           onClick={() => setDropdownMenu(!dropdownMenu)}
         >
-          
+          <Menu sx={{ color: variables.darkgrey }} />
+          {!user ? (
+            <Person sx={{ color: variables.darkgrey }} />
+          ) : (
+            <img
+              src={`${process.env.REACT_APP_API_URL}/${user.profileImagePath.replace(
+                "public",
+                ""
+              )}`}
+              alt="profile photo"
+              style={{ objectFit: "cover", borderRadius: "50%" }}
+            />
+          )}
         </button>
 
         {dropdownMenu && !user && (
