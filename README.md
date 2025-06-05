@@ -14,7 +14,7 @@ The Home Rentals Application provides the following capabilities:
 - **Frontend:** React (with Redux), SCSS, Material-UI
 - **Backend:** Node.js & Express
 - **Database:** MongoDB (via Mongoose)
-- **Authentication:** JWT & Bcrypt
+- **Authentication:** JWT (JsonWebToken) & Bcyrpt (for passwords)
 
 ---
 
