@@ -52,5 +52,8 @@ Book: Select available dates from the calendar to reserve a property.
 
 Wishlist: Add or remove properties from your wishlist for quick reference.
 
+**Live Demo**: [https://wandernest-travels.onrender.com](https://wandernest-travels.onrender.com)  
+🕒 _Note: Initial load may take ~30 seconds due to free tier server spin-up._
+
 Contact:
 Utsav Choudhary (+91 88268 34155)
