@@ -15,20 +15,7 @@ const CreateListing = () => {
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
 
-  const [formLocation, setFormLocation] = useState({
-    streetAddress: "",
-    aptSuite: "",
-    city: "",
-    country: "",
-  });
-
-  const handleChangeLocation = (e) => {
-    const { name, value } = e.target;
-    setFormLocation({
-      ...formLocation,
-      [name]: value,
-    });
-  };
+  
 
   const [guestCount, setGuestCount] = useState(1);
   const [bedroomCount, setBedroomCount] = useState(1);
