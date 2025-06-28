@@ -2,193 +2,54 @@
 @import "./breakpoints.scss";
 
 .category-list {
-  padding: 60px 80px;
+  padding: 50px 80px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-  border-radius: 0;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(20px);
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-      linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0%, transparent 100%);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1;
-  }
+  gap: 60px;
+  background: linear-gradient(135deg, #e0f8e9, #a8e6cf); 
+  border-radius: 20px;
 
   @include sm {
-    padding: 40px 20px;
-    gap: 15px;
+    padding: 50px 20px;
   }
 
   .category {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: rgba(255, 255, 255, 0.9);
+    color: black;
     cursor: pointer;
-    padding: 20px 24px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    z-index: 2;
-    min-width: 120px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
-      border-radius: 20px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      z-index: -1;
-    }
 
     &_icon {
-      font-size: 32px;
-      margin-bottom: 8px;
-      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
-      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-size: 30px;
     }
 
     p {
-      font-size: 16px;
-      font-weight: 600;
-      margin: 0;
-      text-align: center;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
+      font-size: 18px;
+      font-weight: 700;
     }
 
     &:hover {
-      transform: translateY(-8px) scale(1.05);
-      background: rgba(255, 255, 255, 0.2);
-      border-color: rgba(255, 255, 255, 0.4);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      color: #ffffff;
-
-      &::before {
-        opacity: 1;
-      }
-
-      .category_icon {
-        transform: scale(1.2) rotate(5deg);
-        filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
-      }
-
-      p {
-        transform: translateY(-2px);
-      }
-    }
-
-    &:active {
-      transform: translateY(-4px) scale(1.02);
+      color: $pinkred;
     }
   }
 
   .selected {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%);
-    border-color: rgba(255, 255, 255, 0.5);
-    color: #ffffff;
-    transform: translateY(-4px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-
-    &::before {
-      opacity: 1;
-    }
-
-    .category_icon {
-      transform: scale(1.1);
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
-    }
-
-    &:hover {
-      transform: translateY(-8px) scale(1.05);
-    }
+    color: $pinkred;
   }
 }
 
 .listings {
-  padding: 60px 60px 120px;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 30px;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #64748b 100%);
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-      radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
-      linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  > * {
-    position: relative;
-    z-index: 2;
-  }
+  padding: 0 60px 120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  background: linear-gradient(135deg, #d0f2dc, #71f3b6); 
+  border-radius: 20px;
 
   @include lg {
-    padding: 40px 20px 100px;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-  }
-
-  @include sm {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    padding: 0 20px 120px;
   }
 }
