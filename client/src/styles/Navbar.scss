@@ -11,6 +11,7 @@
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
+  z-index: 9999;
 
   @include sm {
     padding: 15px 20px;
@@ -130,7 +131,7 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 20px;
       box-shadow: 0 16px 64px rgba(0, 0, 0, 0.4);
-      z-index: 9999;
+      z-index: 99999;
       animation: fadeIn 0.3s ease;
 
       @include sm {

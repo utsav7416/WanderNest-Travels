@@ -21,9 +21,9 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <a href="/">
+      <Link to="/">
         <img src="/assets/logo.png" alt="logo" />
-      </a>
+      </Link>
 
       <div className="navbar_search">
         <input
@@ -42,13 +42,13 @@ const Navbar = () => {
 
       <div className="navbar_right">
         {user ? (
-          <a href="/create-listing" className="host">
+          <Link to="/create-listing" className="host">
             Become A Host
-          </a>
+          </Link>
         ) : (
-          <a href="/login" className="host">
+          <Link to="/login" className="host">
             Become A Host
-          </a>
+          </Link>
         )}
 
         <button
