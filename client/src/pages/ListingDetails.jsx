@@ -10,7 +10,8 @@ import enUS from "date-fns/locale/en-US";
 import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
+import TourismAnimations from "../components/TourismAnimations";
 
 const ListingDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -150,7 +151,7 @@ const ListingDetails = () => {
         <hr />
 
         <div className="booking">
-          <div>
+          <div className="booking-left">
             <h2>What this place offers?</h2>
             <div className="amenities">
               {listing.amenities && listing.amenities[0] ? (
@@ -170,9 +171,11 @@ const ListingDetails = () => {
                 <p>No amenities listed.</p>
               )}
             </div>
+
+            <TourismAnimations />
           </div>
 
-          <div>
+          <div className="booking-right">
             <h2>How long do you want to stay?</h2>
             <div className="date-range-calendar">
               <DateRange
