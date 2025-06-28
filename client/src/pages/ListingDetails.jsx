@@ -154,7 +154,7 @@ const ListingDetails = () => {
         <hr />
 
         <div className="booking">
-          <div>
+          <div className="booking-left">
             <h2>What this place offers?</h2>
             <div className="amenities">
               {listing.amenities && listing.amenities[0] ? (
@@ -176,9 +176,28 @@ const ListingDetails = () => {
                 <p>No amenities listed.</p>
               )}
             </div>
+
+            <div className="decorative-images">
+              <img
+                src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&auto=format&fit=crop"
+                alt="Travel destination 1"
+              />
+              <img
+                src="https://theluxuryeditor.com/wp-content/uploads/2018/09/104682512.jpg"
+                alt="Travel destination 2"
+              />
+              <img
+                src="https://media.gettyimages.com/id/626429848/photo/northern-lights-green-aurora-borealis-over-alesund-norway.jpg?s=612x612&w=gi&k=20&c=i2F5G2FFddnZulZ4URn7eUZxNqIsMuUxXPOmR0b0liU="
+                alt="Travel destination 3"
+              />
+              <img
+                src="https://www.bsr.org/images/heroes/bsr-travel-hero..jpg"
+                alt="Travel destination 4"
+              />
+            </div>
           </div>
 
-          <div>
+          <div className="booking-right">
             <h2>How long do you want to stay?</h2>
             <div className="date-range-calendar">
               <DateRange
@@ -205,25 +224,6 @@ const ListingDetails = () => {
               </button>
             </div>
           </div>
-        </div>
-
-        <div className="decorative-images">
-          <img
-            src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&auto=format&fit=crop"
-            alt="Decorative resort pool"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1582142407895-a86a23886a89?w=800&auto=format&fit=crop"
-            alt="Decorative travel luggage"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1596623019749-905154378627?w=800&auto=format&fit=crop"
-            alt="Decorative historical architecture"
-          />
-          <img
-            src="https://www.bsr.org/images/heroes/bsr-travel-hero..jpg"
-            alt="Decorative travel map"
-          />
         </div>
       </div>
 
