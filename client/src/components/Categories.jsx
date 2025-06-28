@@ -2,6 +2,7 @@ import { categories } from "../data";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 
+
 const Categories = () => {
   return (
     <div className="categories bg-gradient-to-br from-gray-50 via-white to-blue-50 py-16">
