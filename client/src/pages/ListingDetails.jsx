@@ -11,7 +11,6 @@ import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import Footer from "../components/Footer";
-import TourismAnimations from "../components/TourismAnimations";
 
 const ListingDetails = () => {
   const [loading, setLoading] = useState(true);
@@ -33,10 +32,8 @@ const ListingDetails = () => {
   };
 
   useEffect(() => {
-    getListingDetails()
+    getListingDetails();
   }, []);
-
-  console.log(listing);
 
   const [dateRange, setDateRange] = useState([
     {
@@ -52,7 +49,10 @@ const ListingDetails = () => {
 
   const start = new Date(dateRange[0].startDate);
   const end = new Date(dateRange[0].endDate);
-  const dayCount = Math.max(1, Math.round((end - start) / (1000 * 60 * 60 * 24)));
+  const dayCount = Math.max(
+    1,
+    Math.round((end - start) / (1000 * 60 * 60 * 24))
+  );
 
   const customerId = useSelector((state) => state?.user?._id);
   const navigate = useNavigate();
@@ -92,7 +92,6 @@ const ListingDetails = () => {
   ) : (
     <>
       <Navbar />
-
       <div className="listing-details">
         <div className="title">
           <h1>{listing.title}</h1>
@@ -103,7 +102,10 @@ const ListingDetails = () => {
           {listing.listingPhotoPaths?.map((item, index) => (
             <img
               key={index}
-              src={`${process.env.REACT_APP_API_URL}/${item.replace("public", "")}`}
+              src={`${process.env.REACT_APP_API_URL}/${item.replace(
+                "public",
+                ""
+              )}`}
               alt="listing photo"
             />
           ))}
@@ -116,7 +118,6 @@ const ListingDetails = () => {
           {listing.guestCount} guests - {listing.bedroomCount} bedroom(s) -{" "}
           {listing.bathroomCount} bathroom(s)
         </p>
-
         <hr />
 
         <div className="profile">
@@ -125,11 +126,13 @@ const ListingDetails = () => {
               <img
                 src={
                   listing.creator.profileImagePath
-                    ? `${process.env.REACT_APP_API_URL}/${listing.creator.profileImagePath.replace(
+                    ? `${
+                        process.env.REACT_APP_API_URL
+                      }/${listing.creator.profileImagePath.replace(
                         "public",
                         ""
                       )}`
-                    : "/assets/default_profile_pic.jpg" 
+                    : "/assets/default_profile_pic.jpg"
                 }
                 alt="Host profile"
               />
@@ -151,18 +154,20 @@ const ListingDetails = () => {
         <hr />
 
         <div className="booking">
-          <div className="booking-left">
+          <div>
             <h2>What this place offers?</h2>
             <div className="amenities">
               {listing.amenities && listing.amenities[0] ? (
                 listing.amenities[0].split(",").map((item, index) => (
                   <div className="facility" key={index}>
                     <div className="facility_icon">
-                      {facilities.find(
-                        (facility) =>
-                          facility.name.trim().toLowerCase() ===
-                          item.trim().toLowerCase()
-                      )?.icon}
+                      {
+                        facilities.find(
+                          (facility) =>
+                            facility.name.trim().toLowerCase() ===
+                            item.trim().toLowerCase()
+                        )?.icon
+                      }
                     </div>
                     <p>{item}</p>
                   </div>
@@ -171,11 +176,9 @@ const ListingDetails = () => {
                 <p>No amenities listed.</p>
               )}
             </div>
-
-            <TourismAnimations />
           </div>
 
-          <div className="booking-right">
+          <div>
             <h2>How long do you want to stay?</h2>
             <div className="date-range-calendar">
               <DateRange
@@ -202,6 +205,25 @@ const ListingDetails = () => {
               </button>
             </div>
           </div>
+        </div>
+
+        <div className="decorative-images">
+          <img
+            src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&auto=format&fit=crop"
+            alt="Decorative resort pool"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1582142407895-a86a23886a89?w=800&auto=format&fit=crop"
+            alt="Decorative travel luggage"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1596623019749-905154378627?w=800&auto=format&fit=crop"
+            alt="Decorative historical architecture"
+          />
+          <img
+            src="https://www.bsr.org/images/heroes/bsr-travel-hero..jpg"
+            alt="Decorative travel map"
+          />
         </div>
       </div>
 
