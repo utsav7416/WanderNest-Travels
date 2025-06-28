@@ -94,6 +94,20 @@
     border-radius: 2px;
   }
 
+  h2 {
+    color: #222222;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 20px 0 10px 0;
+  }
+
+  h3 {
+    color: #222222;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 15px 0 10px 0;
+  }
+
   .profile {
     display: flex;
     gap: 20px;
@@ -105,6 +119,12 @@
       border-radius: 50%;
       border: 2px solid #f8395a;
     }
+
+    h3 {
+      color: #222222;
+      font-weight: 600;
+      margin: 0;
+    }
   }
 
   p {
@@ -112,6 +132,7 @@
     margin-top: 20px;
     font-size: 1.1rem;
     line-height: 1.8;
+    color: #222222;
   }
 
   .booking {
@@ -150,6 +171,7 @@
 
         p {
           margin: 0;
+          color: #222222;
         }
       }
     }
@@ -164,6 +186,11 @@
       h2 {
         margin-bottom: 10px;
         color: #f8395a;
+      }
+
+      p {
+        color: #222222;
+        font-weight: 500;
       }
 
       .button {
@@ -187,7 +214,6 @@
   }
 }
 
-// Fade In Page Animation
 @keyframes fadeInPage {
   from {
     opacity: 0;
