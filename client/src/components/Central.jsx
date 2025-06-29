@@ -6,8 +6,8 @@ const Central = () => {
     <div className="central-hero">
       <div className="hero-image">
         <img 
-          src="https://cdn.dribbble.com/userupload/11975763/file/original-f88e13063da0bda932d42e71ba58d5d5.png?resize=752x&vertical=center" 
-          alt="Travel Journey" 
+          src="https://www.mensjournal.com/.image/t_share/MjEwNTQxODIwNjgwMDg3NTI5/best-aurora-borealis-viewing-promo_tromso-norway_juan-maria-coy-vergara-getty.jpg" 
+          alt="1" 
         />
       </div>
       <div className="hero-content">
