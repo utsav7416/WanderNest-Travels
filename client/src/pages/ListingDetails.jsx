@@ -251,19 +251,22 @@ const ListingDetails = () => {
               <p>Start Date: {dateRange[0].startDate.toDateString()}</p>
               <p>End Date: {dateRange[0].endDate.toDateString()}</p>
 
+              {/* ShareableLink moved here - directly below calendar */}
+              <div className="shareable-link-section">
+                <ShareableLink 
+                  listing={listing}
+                  dateRange={dateRange}
+                  totalPrice={getTotalPrice()}
+                  selectedServices={selectedServices}
+                />
+              </div>
+
               <button className="button" type="submit" onClick={handleSubmit}>
                 CONFIRM BOOKING
               </button>
             </div>
           </div>
         </div>
-
-        <ShareableLink 
-          listing={listing}
-          dateRange={dateRange}
-          totalPrice={getTotalPrice()}
-          selectedServices={selectedServices}
-        />
       </div>
 
       <Footer />
