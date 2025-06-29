@@ -26,27 +26,6 @@ const testimonials = [
     rating: 5,
     feedback: 'From planning to execution, every detail was perfect. The personalized itinerary saved me hours of research, and the local insights were invaluable.',
   },
-  {
-    name: 'Emma Johnson',
-    location: 'London, UK',
-    image: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=400',
-    rating: 5,
-    feedback: 'WanderNest made my family vacation stress-free and memorable. The kids loved the interactive travel guide, and we parents appreciated the detailed safety information.',
-  },
-  {
-    name: 'Kenji Tanaka',
-    location: 'Tokyo, Japan',
-    image: 'https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=400',
-    rating: 5,
-    feedback: 'The cultural immersion experiences recommended by WanderNest gave me authentic connections with locals. This platform understands what true travel means.',
-  },
-  {
-    name: 'Maria Santos',
-    location: 'São Paulo, Brazil',
-    image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400',
-    rating: 5,
-    feedback: 'Sustainable travel options and eco-friendly accommodations aligned perfectly with my values. WanderNest is leading the future of responsible tourism.',
-  },
 ];
 
 const teamMembers = [
