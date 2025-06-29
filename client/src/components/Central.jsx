@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './Central.scss'
+import '../styles/Central.scss'
 
 const Central = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
