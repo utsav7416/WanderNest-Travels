@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
 import { categories } from "../data";
-
 import "../styles/Listings.scss";
-
 import ListingCard from "./ListingCard";
 import Loader from "./Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { setListings } from "../redux/state";
 
-const Listings = () => {
-
+const Listings = ({ onLoaded }) => {
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(true);
-
   const [selectedCategory, setSelectedCategory] = useState("All");
-
   const listings = useSelector((state) => state.listings);
 
   const getFeedListings = async () => {
@@ -27,17 +22,21 @@ const Listings = () => {
           method: "GET",
         }
       );
-
       const data = await response.json();
       dispatch(setListings({ listings: data }));
       setLoading(false);
+      if (onLoaded) onLoaded();
     } catch (err) {
       console.log("Fetch Listings Failed", err.message);
+      setLoading(false);
+      if (onLoaded) onLoaded();
     }
   };
 
   useEffect(() => {
+    setLoading(true);
     getFeedListings();
+    // eslint-disable-next-line
   }, [selectedCategory]);
 
   return (
@@ -69,9 +68,10 @@ const Listings = () => {
               category,
               type,
               price,
-              booking=false
+              booking = false
             }) => (
               <ListingCard
+                key={_id}
                 listingId={_id}
                 creator={creator}
                 listingPhotoPaths={listingPhotoPaths}
