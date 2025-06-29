@@ -11,11 +11,14 @@ import Loader from "../components/Loader";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
 import Footer from "../components/Footer";
+import AdditionalServices from "../components/AdditionalServices";
+import ShareableLink from "../components/ShareableLink";
 
 const ListingDetails = () => {
   const [loading, setLoading] = useState(true);
   const { listingId } = useParams();
   const [listing, setListing] = useState(null);
+  const [selectedServices, setSelectedServices] = useState([]);
 
   const getListingDetails = async () => {
     try {
@@ -54,6 +57,16 @@ const ListingDetails = () => {
     Math.round((end - start) / (1000 * 60 * 60 * 24))
   );
 
+  const getServicesCost = () => {
+    return selectedServices.reduce((total, service) => total + service.price, 0);
+  };
+
+  const getTotalPrice = () => {
+    const baseCost = listing.price * dayCount;
+    const servicesCost = getServicesCost() * dayCount;
+    return baseCost + servicesCost;
+  };
+
   const customerId = useSelector((state) => state?.user?._id);
   const navigate = useNavigate();
 
@@ -65,7 +78,8 @@ const ListingDetails = () => {
         hostId: listing?.creator?._id,
         startDate: dateRange[0].startDate.toDateString(),
         endDate: dateRange[0].endDate.toDateString(),
-        totalPrice: listing.price * dayCount,
+        totalPrice: getTotalPrice(),
+        selectedServices: selectedServices,
       };
 
       const response = await fetch(
@@ -85,6 +99,10 @@ const ListingDetails = () => {
     } catch (err) {
       console.log("Submit Booking Failed.", err.message);
     }
+  };
+
+  const handleServicesChange = (services) => {
+    setSelectedServices(services);
   };
 
   return loading ? (
@@ -177,6 +195,8 @@ const ListingDetails = () => {
               )}
             </div>
 
+            <AdditionalServices onServicesChange={handleServicesChange} />
+
             <div className="decorative-images">
               <img
                 src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?w=800&auto=format&fit=crop"
@@ -215,7 +235,19 @@ const ListingDetails = () => {
                 </h2>
               )}
 
-              <h2>Total price: ${listing.price * dayCount}</h2>
+              {selectedServices.length > 0 && (
+                <div className="services-cost-breakdown">
+                  <h3>Additional Services:</h3>
+                  {selectedServices.map((service, index) => (
+                    <p key={index}>
+                      {service.name}: ${service.price} x {dayCount} days = ${service.price * dayCount}
+                    </p>
+                  ))}
+                  <p><strong>Services Total: ${getServicesCost() * dayCount}</strong></p>
+                </div>
+              )}
+
+              <h2>Total price: ${getTotalPrice()}</h2>
               <p>Start Date: {dateRange[0].startDate.toDateString()}</p>
               <p>End Date: {dateRange[0].endDate.toDateString()}</p>
 
@@ -225,6 +257,13 @@ const ListingDetails = () => {
             </div>
           </div>
         </div>
+
+        <ShareableLink 
+          listing={listing}
+          dateRange={dateRange}
+          totalPrice={getTotalPrice()}
+          selectedServices={selectedServices}
+        />
       </div>
 
       <Footer />
