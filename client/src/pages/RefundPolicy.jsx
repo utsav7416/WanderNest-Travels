@@ -158,8 +158,8 @@ const RefundPolicy = () => {
               <div className="category-block flights">
                 <div className="category-header">
                   <img
-                    src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
-                    alt="Aircraft and travel"
+                    src="https://assets.cntraveller.in/photos/63d3627d6b023243876021f6/16:9/w_1920,h_1080,c_limit/Night-flight.jpg"
+                    alt="1"
                   />
                   <div className="header-overlay">
                     <h3>Flight & Transportation</h3>
@@ -175,8 +175,8 @@ const RefundPolicy = () => {
               <div className="category-block accommodations">
                 <div className="category-header">
                   <img
-                    src="https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
-                    alt="Luxury accommodation"
+                    src="https://media.istockphoto.com/id/2046945081/photo/modern-style-luxury-black-living-room-with-city-view-in-the-night-3d-render.jpg?s=612x612&w=0&k=20&c=EptmKtc17Hg_1JloU11XTQdxmXoWBIC0mCwXeXimk08="
+                    alt="2"
                   />
                   <div className="header-overlay">
                     <h3>Hotels & Accommodations</h3>
@@ -193,7 +193,7 @@ const RefundPolicy = () => {
                 <div className="category-header">
                   <img
                     src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
-                    alt="Emergency medical care"
+                    alt="3"
                   />
                   <div className="header-overlay">
                     <h3>Emergency Situations</h3>
