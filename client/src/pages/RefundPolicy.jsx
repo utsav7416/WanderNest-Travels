@@ -54,79 +54,157 @@ const RefundPolicy = () => {
           </div>
         </section>
 
-        <section className="features-section">
-          <div className="features-container">
-            <h2 className="features-title">Cancellation Policies</h2>
-            <div className="features-grid">
+        <section className="content-section timeline-immersion">
+          <div className="container">
+            <div className="section-header">
+              <h2>Cancellation Timeline</h2>
+              <p>Visual breakdown of refund percentages based on timing</p>
+            </div>
+            
+            <div className="timeline-container">
+              <div className="timeline-track"></div>
               
-              <div className="feature-card">
-                <img 
-                  src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                  alt="Customer cancellation" 
-                  className="feature-image" 
-                />
-                <h3 className="feature-title">Cancellation by Customer</h3>
-                <div className="policy-list">
-                  <div className="policy-item positive">
-                    <span className="policy-icon">✔</span>
-                    <span>Full refunds for cancellations made within 24 hours of booking</span>
+              <div className="timeline-point point-90">
+                <div className="point-visual">
+                  <img
+                    src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Early planning"
+                  />
+                  <div className="point-overlay">
+                    <span className="percentage">100%</span>
                   </div>
-                  <div className="policy-item positive">
-                    <span className="policy-icon">✔</span>
-                    <span>Partial refunds based on timing and partner policies</span>
-                  </div>
-                  <div className="policy-item negative">
-                    <span className="policy-icon">✘</span>
-                    <span>No refunds for no-shows or late cancellations</span>
-                  </div>
+                </div>
+                <div className="point-content">
+                  <h4>90+ Days</h4>
+                  <p>Full refund minus $150 admin fee</p>
                 </div>
               </div>
 
-              <div className="feature-card">
-                <img 
-                  src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                  alt="Company cancellation" 
-                  className="feature-image" 
-                />
-                <h3 className="feature-title">Cancellation by WanderNest</h3>
-                <p className="feature-description">
-                  If WanderNest or our partners need to cancel your booking due to unforeseen 
-                  circumstances, you'll be offered a full refund or alternate travel options 
-                  at no extra cost. We prioritize your travel experience above all.
-                </p>
+              <div className="timeline-point point-60">
+                <div className="point-visual">
+                  <img
+                    src="https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Planning phase"
+                  />
+                  <div className="point-overlay">
+                    <span className="percentage">75%</span>
+                  </div>
+                </div>
+                <div className="point-content">
+                  <h4>60-89 Days</h4>
+                  <p>75% refund of total cost</p>
+                </div>
               </div>
 
-              <div className="feature-card">
-                <img 
-                  src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                  alt="Refund process" 
-                  className="feature-image" 
-                />
-                <h3 className="feature-title">How to Request a Refund</h3>
-                <p className="feature-description">
-                  Contact us at <strong style={{color: '#00ffff'}}>wandernest@support.com</strong> with your booking ID 
-                  and details. Our support team will review your request and process refunds 
-                  within <strong style={{color: '#00ffff'}}>7–10 business days</strong>.
-                </p>
+              <div className="timeline-point point-30">
+                <div className="point-visual">
+                  <img
+                    src="https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Mid planning"
+                  />
+                  <div className="point-overlay">
+                    <span className="percentage">50%</span>
+                  </div>
+                </div>
+                <div className="point-content">
+                  <h4>30-59 Days</h4>
+                  <p>50% refund of total cost</p>
+                </div>
               </div>
 
+              <div className="timeline-point point-14">
+                <div className="point-visual">
+                  <img
+                    src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Late planning"
+                  />
+                  <div className="point-overlay">
+                    <span className="percentage">25%</span>
+                  </div>
+                </div>
+                <div className="point-content">
+                  <h4>14-29 Days</h4>
+                  <p>25% refund of total cost</p>
+                </div>
+              </div>
+
+              <div className="timeline-point point-0">
+                <div className="point-visual">
+                  <img
+                    src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
+                    alt="Last minute"
+                  />
+                  <div className="point-overlay">
+                    <span className="percentage">0%</span>
+                  </div>
+                </div>
+                <div className="point-content">
+                  <h4>Under 14 Days</h4>
+                  <p>No refund available</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="stats-section">
-          <div className="stats-container">
-            <div className="stat-card">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Customer Support</div>
+        <section className="content-section policies-detailed">
+          <div className="container">
+            <div className="section-header">
+              <h2>Comprehensive Coverage</h2>
+              <p>Detailed breakdown of specific policy areas</p>
             </div>
-            <div className="stat-card">
-              <div className="stat-number">7-10</div>
-              <div className="stat-label">Business Days Processing</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">100%</div>
-              <div className="stat-label">Transparent Process</div>
+
+            <div className="policy-categories">
+              <div className="category-block flights">
+                <div className="category-header">
+                  <img
+                    src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
+                    alt="Aircraft and travel"
+                  />
+                  <div className="header-overlay">
+                    <h3>Flight & Transportation</h3>
+                    <p>Airline policies and ground transport terms</p>
+                  </div>
+                </div>
+                <div className="category-content">
+                  <p>Flight cancellations follow airline-specific policies that vary significantly between carriers and fare types. We recommend refundable or changeable fares when possible, despite higher upfront costs.</p>
+                  <p>Ground transportation terms vary by provider and destination. European trains often allow changes for small fees, while remote transfers require 48-hour notice to avoid charges.</p>
+                </div>
+              </div>
+
+              <div className="category-block accommodations">
+                <div className="category-header">
+                  <img
+                    src="https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
+                    alt="Luxury accommodation"
+                  />
+                  <div className="header-overlay">
+                    <h3>Hotels & Accommodations</h3>
+                    <p>Property-specific cancellation terms</p>
+                  </div>
+                </div>
+                <div className="category-content">
+                  <p>Accommodation policies vary by property type, location, and season. Standard hotels typically offer 24-48 hour free cancellation, while premium properties may require 7-14 days notice.</p>
+                  <p>Remote lodges and specialty accommodations often have stricter policies due to their unique nature and limited availability. Package bookings often secure better terms than individual reservations.</p>
+                </div>
+              </div>
+
+              <div className="category-block emergencies">
+                <div className="category-header">
+                  <img
+                    src="https://images.pexels.com/photos/3184639/pexels-photo-3184639.jpeg?auto=compress&cs=tinysrgb&w=1200&h=400&fit=crop"
+                    alt="Emergency medical care"
+                  />
+                  <div className="header-overlay">
+                    <h3>Emergency Situations</h3>
+                    <p>Medical emergencies and unforeseen circumstances</p>
+                  </div>
+                </div>
+                <div className="category-content">
+                  <p>Documented medical emergencies involving travelers or immediate family receive flexible cancellation terms beyond standard policies. Medical documentation from licensed physicians is required.</p>
+                  <p>Government travel restrictions, border closures, or Level 3+ advisories typically result in rescheduling options or future travel credits with waived standard fees.</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

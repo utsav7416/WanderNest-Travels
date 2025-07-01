@@ -1,5 +1,4 @@
 import React from 'react';
-import CountUp from 'react-countup';
 import '../styles/About.scss';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -10,7 +9,7 @@ const testimonials = [
     location: 'Mumbai, India',
     image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400',
     rating: 5,
-    feedback: 'WanderNest transformed my travel experience completely. The AI-powered recommendations were spot-on, and I discovered hidden gems I never would have found otherwise. Absolutely revolutionary!',
+    feedback: 'WanderNest transformed my travel experience completely. The entire journey was spot-on, and I discovered hidden gems I never would have found otherwise. Absolutely revolutionary!',
   },
   {
     name: 'Sylhetti Phakapehlo',
@@ -129,31 +128,67 @@ const About = () => {
           </div>
         </section>
 
-        <section className="stats-section">
-          <div className="stats-container">
-            <div className="stat-card">
-              <div className="stat-number">
-                <CountUp end={50000} duration={3} separator="," />+
-              </div>
-              <div className="stat-label">Happy Travelers</div>
+        <section className="content-section values-revolution">
+          <div className="container">
+            <div className="section-header">
+              <h2>What Drives Us</h2>
+              <p>Three principles that revolutionize how we approach travel</p>
             </div>
-            <div className="stat-card">
-              <div className="stat-number">
-                <CountUp end={195} duration={3} />+
+            
+            <div className="values-container">
+              <div className="value-block authentic">
+                <div className="value-visual">
+                  <img
+                    src="https://images.pexels.com/photos/1591373/pexels-photo-1591373.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Local community interaction"
+                  />
+                  <div className="value-overlay">
+                    <div className="value-number">01</div>
+                    <div className="value-pattern"></div>
+                  </div>
+                </div>
+                <div className="value-content">
+                  <h3>Authentic Connections</h3>
+                  <p>We believe the best memories come from genuine interactions with local communities, not tourist traps. Every trip includes opportunities to connect with real people and experience authentic culture.</p>
+                  <div className="value-accent"></div>
+                </div>
               </div>
-              <div className="stat-label">Countries Covered</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">
-                <CountUp end={10000} duration={3} separator="," />+
+
+              <div className="value-block sustainable">
+                <div className="value-content">
+                  <h3>Sustainable Travel</h3>
+                  <p>Our planet deserves better. We partner exclusively with eco-conscious accommodations and tour operators, ensuring your adventures leave a positive impact on the places you visit.</p>
+                  <div className="value-accent"></div>
+                </div>
+                <div className="value-visual">
+                  <img
+                    src="https://images.pexels.com/photos/1761279/pexels-photo-1761279.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Pristine natural landscape"
+                  />
+                  <div className="value-overlay">
+                    <div className="value-number">02</div>
+                    <div className="value-pattern"></div>
+                  </div>
+                </div>
               </div>
-              <div className="stat-label">Destinations</div>
-            </div>
-            <div className="stat-card">
-              <div className="stat-number">
-                <CountUp end={500} duration={3} />+
+
+              <div className="value-block personalized">
+                <div className="value-visual">
+                  <img
+                    src="https://images.pexels.com/photos/1320684/pexels-photo-1320684.jpeg?auto=compress&cs=tinysrgb&w=800&h=600&fit=crop"
+                    alt="Personalized travel planning"
+                  />
+                  <div className="value-overlay">
+                    <div className="value-number">03</div>
+                    <div className="value-pattern"></div>
+                  </div>
+                </div>
+                <div className="value-content">
+                  <h3>Personalized Service</h3>
+                  <p>No two travelers are alike, and neither should their journeys be. We spend time understanding your interests, travel style, and dreams to create experiences that feel uniquely yours.</p>
+                  <div className="value-accent"></div>
+                </div>
               </div>
-              <div className="stat-label">Travel Partners</div>
             </div>
           </div>
         </section>
